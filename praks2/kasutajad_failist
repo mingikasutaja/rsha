@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kasutajanimi='cat /home/user/praktikum2/kasutajad'
+while read user; do
+        useradd -m $kasutajanimi
+done < /home/user/praktikum2/kasutajad
