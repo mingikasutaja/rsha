@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Sisesta faili nimi"
+read fail
+input="./$fail"
+while IFS= read line
+do
+	kasutajanimi=$( echo "$line" | cut -d\: -f1 )
+	parool=$( echo "$line" | cut -d\: -f2  )
+# käsk mis lisab kasutaja paroolita
+echo `useradd $kasutajanimi `
+echo $kasutajanimi:$parool | chpasswd
+done < "$fail"
