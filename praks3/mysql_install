@@ -1,9 +1,9 @@
 #!/bin/bash
 
-mysql=$(dpkg-query -W -f='${Status}' mysql 2>/dev/null | grep -c "ok installed")
+mysql=$(dpkg-query -W -f='${Status}' mysql 2>/dev/null | grep -c "ok installeeritud")
 if [ $mysql -eq 0 ]
 then
-	echo "mysql paigaldus"
+	echo "mysql paigaldus hakkab"
 	pause
 	apt install mysql-client mysql-server -y #mysql serveri ja kliendi install
 
