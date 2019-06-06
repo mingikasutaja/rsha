@@ -3,7 +3,7 @@
 php=$(dpkg-query -W -f='${Status}' php 2>/dev/null | grep -c "ok installed")
 if [ $php -eq 0 ] # kui ei ole, siis paigaldab asjad
 then
-	echo "PHP paigaldus"
+	echo "PHP paigaldus hakkab"
 	apt install -y dirmngr
 	apt install ca-certificates lsb-release -y
 	apt --force-yes install apt-transport-https --allow-unauthenticated -y
