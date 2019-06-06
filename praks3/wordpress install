@@ -1,0 +1,10 @@
+#!/bin/bash
+sh apache_install #kontrollib kas apache2 on olemas
+sh php_install #kontrollib kas php on olemas
+sh mysql-server_install #kävitab mysql skripti mis kontrollib kas mysql on olemas
+sh phpmyadmin_install #käivitab phpmyadmin install skripti mis kontrollib kas phpmyadmin on olemas
+cd /var/www/html/ #vahetab kausta
+wget https://wordpress.org/latest.tar.gz #laeb alla kõige uuema wordpressi
+tar xpf latest.tar.gz #pakib lahti tar faili
+chown -R www-data:www-data /var/www/html #vahetab html kausta õigused
+mv /var/www/html/index.html /var/www/html/index.html.old
