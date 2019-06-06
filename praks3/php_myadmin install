@@ -2,7 +2,7 @@
 phpmyadmin=$(dpkg-query -W -f='${Status}' phpmyadmin 2>/dev/null | grep -c "ok installed")
 if [ $phpmyadmin -eq 0 ]
 then
-	echo "phpmyadmin paigaldus"
+	echo "phpmyadmin paigaldus hakkab"
 	pause
 	apt install phpmyadmin -y #phpmyadmin install
 
